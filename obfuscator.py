@@ -98,7 +98,7 @@ if __name__ == '__main__':
                              ' - Paths containing spaces must be enclosed in quotes, e.g. "Path to file/"')
     parser.add_argument('column', help='name of the column to obfuscate\n' 
                                        ' - Column names containing spaces must be wrapped in quotes')
-    parser.add_argument('-f', "--filenames", nargs='*', type=str,
+    parser.add_argument('-f', "--filenames", nargs='+', type=str,
                         help="specific csv filenames in the directory to obfuscate\n"
                              " - Defaults to all csv files in the directory)\n"
                              ' - Filenames containing spaces must be enclosed in double quotes, e.g. "File 1.csv"')
