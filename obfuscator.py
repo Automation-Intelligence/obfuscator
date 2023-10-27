@@ -58,9 +58,9 @@ def obfuscate_1z(_file, column_name, validation=True, delete_original = False):
 
         # If the files are the same except for the first column, delete the original file
         if files_are_equal:
-            print(f"The {file} files are the same except for the first column. Deleting the original file.")
+            print(f"The {file} files are the same except for the first column.")
         else:
-            raise ValueError(f"The {file} files are different. Keeping the original file.")
+            raise ValueError(f"The {file} files contain differences.")
 
     # 7. if specified, delete the original file
     if delete_original:
@@ -69,13 +69,11 @@ def obfuscate_1z(_file, column_name, validation=True, delete_original = False):
 
 def unzip_all_in_directory(_path):
     # Loop through all the zipped files in the directory
-    # zipped_files = [os.path.join(directory, f) for f in os.listdir(directory) if f.endswith(".zip")]
     for _file in _path.glob('*.zip'):
         with zipfile.ZipFile(_file, 'r') as zip_ref:
             for member in zip_ref.namelist():
                 if '__MACOSX' not in member:
                     zip_ref.extract(member, _path)
-                    # os.remove(_file)  # Optionally, remove the original ZIP file after extraction
 
 
 def add_csv_extension(_path):

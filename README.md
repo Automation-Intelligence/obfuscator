@@ -17,7 +17,7 @@ optional arguments:
   -h, --help            show this help message and exit
   -f FILENAMES [FILENAMES ...], --filenames FILENAMES [FILENAMES ...]
                         specific csv filenames in the directory to obfuscate
-                         - Defaults to all csv files in the directory)
+                         - Defaults to all csv files in the directory
                          - Filenames containing spaces must be enclosed in double quotes, e.g. "File 1.csv"
   -d, --delete          deletes the original, unobfuscated files
                         (default=False)
